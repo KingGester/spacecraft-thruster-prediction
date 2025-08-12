@@ -18,7 +18,15 @@ spacecraft-thruster-prediction/
 │   ├── processed/     
 │   └── metadata.csv 
 |  
-├── notebooks/         
+├── notebooks/
+│   ├── models/
+|   |   ├──individual
+|   |   └──xgb_final_model.joblib
+│   ├── 01_metadata_exploration.ipynb
+│   ├── 03_dynamic_features_model.ipynb
+│   ├── 04_individualized_modeling.ipynb  
+|   ├── 05_lstm_vs_xgboost_SN04.ipynb 
+|   └── vl_check.ipynb
 ├── src/              
 └── README.md         
 ```
