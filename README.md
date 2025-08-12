@@ -58,6 +58,19 @@ The dataset includes: |
 - matplotlib
 - seaborn
 
+
+## download model
+To access the ready-made model, follow the steps below.
+ ```
+│── models/
+|   ├──individual
+|   └──xgb_final_model.joblib
+ ```
+xgb_final_model.joblib:  Customization model for all single-propellant chemical propulsion
+
+Inside the folder are models that are customized for their own propulsion engine.
+
+
 ## Installation | نصب
 ```bash
 # Clone the repository
