@@ -1,5 +1,5 @@
 # Spacecraft Thruster Performance Prediction | پیش‌بینی عملکرد پیشرانه فضاپیما
-
+![](./photo/hybrid-t4i-2020.jpg)
 ## Overview | مرور کلی
 This project focuses on analyzing and predicting the performance of spacecraft thrusters using real test data. The dataset contains firing test data from multiple thrusters, including various operating conditions and performance metrics.
 
