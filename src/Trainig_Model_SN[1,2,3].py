@@ -83,12 +83,12 @@ train_data = meta[meta['sn'] .isin([1,2,3])]
 # prossec CSV
 def process_test_file(file_path, target_column='thrust'):
     if not os.path.exists(file_path):
-        print(f"🚨 فایل {file_path} پیدا نشد.")
+        print(f"🚨 file {file_path} NOT fonde")
         return None
     try:
         df = pd.read_csv(file_path)
         if target_column not in df.columns:
-            print(f"❌ ستون {target_column} در فایل {file_path} وجود ندارد.")
+            print(f"❌ coulmn {target_column} در فایل {file_path} وجود ندارد.")
             return None
 
         df = df[['ton', target_column]].copy()
