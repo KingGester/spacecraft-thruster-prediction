@@ -9,6 +9,15 @@ import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
+
+def detect_anomaly(y_true, y_pred, threshold=0.5):
+    error = np.abs(y_true - y_pred)
+    if error > threshold:
+        return True, error
+    else:
+        return False, error
+
+
 from src.forecast import (
     load_available_models,
     load_model,
@@ -128,6 +137,19 @@ with right:
         file_name="thruster_forecast.csv",
         mime="text/csv"
     )
+
+st.header("🔍 Anomaly Detection - تشخیص رفتار غیرعادی موتور")
+
+y_true = st.number_input("مقدار واقعی شتاب (از سنسور یا دیتاست):", value=0.0)
+y_pred = st.number_input("مقدار پیش‌بینی‌شده توسط مدل:", value=0.0)
+threshold = st.slider("آستانه خطا (Threshold):", 0.1, 5.0, 1.0)
+
+anomaly, error = detect_anomaly(y_true, y_pred, threshold)
+
+if anomaly:
+    st.error(f"⚠️ هشدار: رفتار غیرعادی! اختلاف = {error:.2f}")
+else:
+    st.success(f"✅ وضعیت عادی است. اختلاف = {error:.2f}")
 
 st.markdown("### 4) نکات مهم")
 st.markdown("""
